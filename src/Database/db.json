@@ -20,6 +20,20 @@
       "phone": "9999999999",
       "age": "24",
       "id": 4
+    },
+    {
+      "name": "Naman Gupta",
+      "email": "namanmaxth8@gmail.com",
+      "phone": "09044414615",
+      "age": "12",
+      "id": 5
+    },
+    {
+      "name": "Abhinav Singh",
+      "email": "1905368@kiit.ac.in",
+      "phone": "7788888888",
+      "age": "9",
+      "id": 6
     }
   ]
 }

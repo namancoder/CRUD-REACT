@@ -11,7 +11,7 @@ import {
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/styles";
-import { addUser } from "../Service/api";
+import { addUser, addFirebaseUser } from "../Service/api";
 import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -34,6 +34,16 @@ const AddContact = () => {
   const { name, email, phone, age } = user;
   const classes = useStyles();
 
+  const [toggleLocal, setToggleLocal] = useState(true);
+  const toggleCheckedLocal = function () {
+    setToggleLocal((toggle) => !toggle);
+  };
+
+  const [toggleFirebase, setToggleFirebase] = useState(false);
+  const toggleCheckedFirebase = function () {
+    setToggleFirebase((toggle) => !toggle);
+  };
+
   const onValueChange = (e) => {
     console.log(e.target.value);
     console.log(user);
@@ -50,7 +60,8 @@ const AddContact = () => {
     ) {
       alert("Please fill all the fields");
     } else {
-      await addUser(user);
+      if (toggleLocal) await addUser(user);
+      if (toggleFirebase) await addFirebaseUser(user);
       navigate("/");
     }
   };
@@ -78,8 +89,13 @@ const AddContact = () => {
       <FormControlLabel
         control={<Switch defaultChecked />}
         label="Local Storage"
+        onChange={() => toggleCheckedLocal()}
       />
-      <FormControlLabel control={<Switch />} label="MongoDB" />
+      <FormControlLabel
+        control={<Switch />}
+        label="Firebase"
+        onChange={() => toggleCheckedFirebase()}
+      />
       <Button variant="contained" onClick={() => addUserDetails()}>
         Add
       </Button>
