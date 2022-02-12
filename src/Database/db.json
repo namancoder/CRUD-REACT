@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "name": "Naman Gupta",
+      "email": "namanmaxth8@gmail.com",
+      "phone": "09044414615",
+      "age": "30",
+      "id": 2
+    },
+    {
+      "name": "John Wick",
+      "email": "john.wick@gmail.com",
+      "phone": "123456789",
+      "age": "23",
+      "id": 3
+    },
+    {
+      "name": "Iron Man",
+      "email": "iron.man@gmail.com",
+      "phone": "9999999999",
+      "age": "24",
+      "id": 4
+    }
+  ]
+}
